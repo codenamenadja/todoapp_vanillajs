@@ -9,6 +9,7 @@ const controller = {
             controller.save();
         }
         view.render(model);
+        
     },
     delete: (id) => {//Delete
         delete model[id];
