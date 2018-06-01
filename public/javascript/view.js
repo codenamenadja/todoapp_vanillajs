@@ -7,9 +7,13 @@ const view = {
             if (data[key]) {
                 template += `
             <li class='todo'  data-id=${key}>
-                <span>${data[key]}</span>
-                <button type="button" onclick='controller.modify.switch(event)'>Edit</button>
-                <button type="button" onclick='controller.delete(${key})'>Delete</button>
+                <span>
+                <span class='span-todo'>${data[key]}</span>
+                </span>
+                <span>
+                <button type="button" class='btn-green'onclick='controller.modify.switch(event)'>Edit</button>
+                <button type="button"  class='btn-red'onclick='controller.delete(${key})'>Delete</button>
+                </span>
             </li>
             `
             }
@@ -17,10 +21,11 @@ const view = {
         view.target.innerHTML = template;
     },
     modify: (e) => {
-        const todo = e.target.parentNode.firstElementChild;
-        const id = todo.parentNode.dataset.id;
+        const todo = e.target.parentNode.parentNode.firstElementChild.firstElementChild;
+        const id = todo.parentNode.parentNode.dataset.id;
         todo.innerHTML = `<input type='text' id='modifyStr' value=${todo.innerHTML}>`
         e.target.innerHTML='Done';
+        e.target.className = 'btn-orange'
         e.target.onclick= ()=>{return controller.modify.done(id)};
         
     }
