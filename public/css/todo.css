@@ -11,6 +11,7 @@ section#div_todo>h2:first-child{
  margin:26px 0 26px 12px;
  font-family: 'Times New Roman', Times, serif;
  font-size:1.8rem;
+ color:rgb(0, 104, 61); 
 }
 article#todo_add{
     display: flex;
@@ -52,8 +53,16 @@ section#div_todo input{
     font-size:1.2rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     flex-basis:90%;
+    border:solid 1.6px rgb(0, 122, 71);
+    color:gray;
 }
-button{
+ul#todo>li:nth-child(odd) input{
+    color:rgb(0, 122, 71);
+}
+ul#todo>li:nth-child(even) input{
+    color: rgb(247, 71, 1);    
+}
+    button{
     color:white;
     height:100%;
     font-size:0.9rem;

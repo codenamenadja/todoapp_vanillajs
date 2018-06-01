@@ -22,7 +22,9 @@ const view = {
     modify: (e) => {
         const todo = e.target.parentNode.parentNode.firstElementChild.firstElementChild;
         const id = todo.parentNode.parentNode.dataset.id;
-        todo.innerHTML = `<input type='text' id='modifyStr' value=${todo.innerHTML}>`
+        const originVal = todo.innerHTML;
+        todo.innerHTML = `<input type='text' id='modifyStr'>`;
+        document.getElementById('modifyStr').value = originVal;
         e.target.innerHTML='Done';
         e.target.className = 'btn-orange'
         e.target.onclick= ()=>{return controller.modify.done(id)};
