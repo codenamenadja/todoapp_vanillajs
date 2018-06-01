@@ -2,7 +2,6 @@ const view = {
     target: document.getElementById('todo'),
     render: (data) => {
         let template = '';
-        let counter = 0;
         for (let key in data) {
             if (data[key]) {
                 template += `
@@ -34,7 +33,11 @@ const view = {
         elem.innerHTML = message;
         target.appendChild(elem);
         setTimeout(() => {
-            target.removeChild(elem);
-        }, 2500);
+            view.removePush(elem);
+        }, 4000);
+    },
+    removePush:(elem)=>{
+        const target =document.getElementById('div_push');
+        target.removeChild(elem);   
     }
 }

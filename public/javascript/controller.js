@@ -19,7 +19,7 @@ const controller = {
     add: () => {//Create
         let value = document.getElementById('newStr').value;
         if (value.length < 4) {
-            controller.push('error: string must at least 4-charactor.');
+           return controller.push('error: string must at least 4-charactor.');
         }
         const id = new Date().getTime();
         model[id] = value;
