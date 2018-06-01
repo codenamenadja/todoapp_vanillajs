@@ -27,6 +27,14 @@ const view = {
         e.target.innerHTML='Done';
         e.target.className = 'btn-orange'
         e.target.onclick= ()=>{return controller.modify.done(id)};
-        
+    },
+    push:(message)=>{
+        const target =document.getElementById('div_push');
+        const elem = document.createElement('p');
+        elem.innerHTML = message;
+        target.appendChild(elem);
+        setTimeout(() => {
+            target.removeChild(elem);
+        }, 2500);
     }
 }

@@ -44,7 +44,7 @@ const controller = {
             controller.push('modifed done!');
         },
     },
-    push: (someString) => {
-        console.log(someString);
+    push: (message) => {
+        view.push(message);
     }
 }
